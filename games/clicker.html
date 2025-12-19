@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clicker Game | RevoFun</title>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-content">
+      <h1 class="logo">RevoFun</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="games">
+    <div class="container">
+
+      <h2 class="section-title">⚡ Clicker Game</h2>
+
+      <p class="game-description">
+        Choose a difficulty and click as fast as you can before time runs out!
+      </p>
+
+      <div class="game-card clicker-game">
+
+        <!-- LEVEL SELECT -->
+        <div class="guess-controls">
+          <select id="levelSelect">
+            <option value="easy">Easy (15s)</option>
+            <option value="medium" selected>Medium (10s)</option>
+            <option value="hard">Hard (5s)</option>
+          </select>
+        </div>
+
+        <p><strong>Time Left:</strong> <span id="time">10</span>s</p>
+        <p><strong>Score:</strong> <span id="score">0</span></p>
+        <p><strong>Best Score:</strong> <span id="bestScore">0</span></p>
+
+        <button id="clickBtn" class="btn" disabled>
+          Click Me!
+        </button>
+
+        <p id="status" class="feedback info">
+          Select a level and press Start.
+        </p>
+
+        <button id="startBtn" class="restart-btn">
+          ▶ Start Game
+        </button>
+
+      </div>
+
+      <div class="back-home">
+        <a href="../index.html" class="btn">⬅ Back to Home</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= JS ================= -->
+  <script src="../js/clicker.js"></script>
+</body>
+</html>

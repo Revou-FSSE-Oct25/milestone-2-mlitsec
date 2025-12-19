@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors | RevoFun</title>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-content">
+      <h1 class="logo">RevoFun</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="games">
+    <div class="container">
+
+      <h2 class="section-title">✊ Rock Paper Scissors</h2>
+
+      <p class="game-description">
+        Choose a level, then select Rock, Paper, or Scissors to play against the computer.
+      </p>
+
+      <!-- ================= GAME CARD ================= -->
+      <div class="game-card rps-game">
+
+        <!-- LEVEL SELECT -->
+        <div class="guess-controls">
+          <select id="levelSelect">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <!-- PLAYER BUTTONS -->
+        <div class="rps-buttons">
+          <button class="btn rps-btn" data-choice="rock">✊ Rock</button>
+          <button class="btn rps-btn" data-choice="paper">✋ Paper</button>
+          <button class="btn rps-btn" data-choice="scissors">✌ Scissors</button>
+        </div>
+
+        <!-- RESULT -->
+        <p id="result" class="feedback info">Make your move!</p>
+
+        <!-- SCORE -->
+        <p>
+          <strong>Player:</strong> <span id="playerScore">0</span> |
+          <strong>Computer:</strong> <span id="computerScore">0</span>
+        </p>
+
+        <!-- RESET -->
+        <button id="resetBtn" class="restart-btn">🔄 Reset Game</button>
+
+      </div>
+
+      <!-- BACK -->
+      <div class="back-home">
+        <a href="../index.html" class="btn">⬅ Back to Home</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= JS ================= -->
+  <script src="../js/rps.js"></script>
+</body>
+</html>
