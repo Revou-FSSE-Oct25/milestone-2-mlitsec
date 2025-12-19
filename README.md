@@ -43,5 +43,3 @@ milestone-2-mlitsec/
 This project was made for learning and academic assessment purposes. All features are implemented using plain HTML, CSS, and JavaScript.
 
 ---
-
-## Author

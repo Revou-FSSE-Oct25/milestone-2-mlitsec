@@ -19,7 +19,6 @@ const LEVEL_SETTINGS = {
   medium: 10,
   hard: 5
 };
-
 // ================= LOAD BEST SCORE =================
 let bestScore = localStorage.getItem("clickerBestScore") || 0;
 bestScoreText.textContent = bestScore;

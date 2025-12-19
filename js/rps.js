@@ -67,14 +67,12 @@ function playGame(playerChoice) {
     resultText.className = "feedback error";
   }
 }
-
 // ================= EVENTS =================
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     playGame(btn.dataset.choice);
   });
 });
-
 resetBtn.addEventListener("click", () => {
   playerScore = 0;
   computerScore = 0;

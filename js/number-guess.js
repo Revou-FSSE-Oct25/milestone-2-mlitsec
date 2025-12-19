@@ -206,7 +206,6 @@ function showSuccess(text) {
   feedback.textContent = text;
   feedback.className = "feedback success";
 }
-
 // ===== END GAME =====
 function endGame() {
   gameEnded = true;
