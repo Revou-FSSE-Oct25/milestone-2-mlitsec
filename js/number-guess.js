@@ -94,14 +94,14 @@ function startGame() {
 function blockInvalidKeys(e) {
   if (gameEnded) {
     e.preventDefault();
-    showError("⛔ Game sudah selesai.");
+    showError("⛔ Game Over.");
     return;
   }
 
   const invalidKeys = ["e", "E", "+", "-", ".", ","];
   if (invalidKeys.includes(e.key)) {
     e.preventDefault();
-    showError("❌ Hanya angka yang diperbolehkan.");
+    showError("❌ Only numbers are allowed.");
   }
 }
 
@@ -115,13 +115,13 @@ function handleEnterKey(e) {
 function handleInput(e) {
   if (gameEnded) {
     e.target.value = "";
-    showError("⛔ Game sudah selesai.");
+    showError("⛔ Game Over.");
     return;
   }
 
   if (/\D/.test(e.target.value)) {
     e.target.value = e.target.value.replace(/\D/g, "");
-    showError("❌ Hanya angka yang diperbolehkan.");
+    showError("❌ Only numbers are allowed.");
     return;
   }
 
@@ -133,9 +133,9 @@ function handleInput(e) {
   const number = Number(e.target.value);
 
   if (number < 1 || number > maxNumber) {
-    showError(`❌ Angka harus antara 1 dan ${maxNumber}`);
+    showError(`❌ The number must be between 1 and ${maxNumber}`);
   } else {
-    showInfo("✔ Angka valid.");
+    showInfo("✔ Your number is valid.");
   }
 }
 
@@ -149,12 +149,12 @@ function handleGuess() {
   const guess = Number(input.value);
 
   if (!guess || guess < 1 || guess > maxNumber) {
-    showError(`❌ Masukkan angka 1–${maxNumber}`);
+    showError(`❌ Enter the number 1–${maxNumber}`);
     return;
   }
 
   if (guessHistory.includes(guess)) {
-    showError("⚠️ Angka ini sudah pernah ditebak.");
+    showError("⚠️ This number has already been guessed.");
     input.value = "";
     return;
   }
@@ -167,15 +167,15 @@ function handleGuess() {
   if (guess === secretNumber) {
     score = attemptsLeft * 10 + 10;
     scoreText.textContent = score;
-    showSuccess(`🎉 Benar! Skor kamu: ${score}`);
+    showSuccess(`🎉 Correct! Your score: ${score}`);
     endGame();
   } else if (attemptsLeft === 0) {
-    showError(`😢 Game Over! Angkanya adalah ${secretNumber}`);
+    showError(`😢 Game Over! The number was ${secretNumber}`);
     endGame();
   } else if (guess > secretNumber) {
-    showInfo(`📉 Terlalu besar! Sisa attempt: ${attemptsLeft}`);
+    showInfo(`📉 Too big! Attempts left: ${attemptsLeft}`);
   } else {
-    showInfo(`📈 Terlalu kecil! Sisa attempt: ${attemptsLeft}`);
+    showInfo(`📈 Too small! Attempts left: ${attemptsLeft}`);
   }
 
   input.value = "";
